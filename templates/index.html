@@ -11,22 +11,54 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   
 </head>
-
+ 
 <body>
  <div class="login">
 	<h3>African Bank Crisis prediction</h3>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="systemic_crisis" placeholder="Enter systemic_crisis" required="required" />
+    	<!-- <input type="text" name="systemic_crisis" placeholder="Enter systemic_crisis" required="required" />
+       --> 
+  <select name="systemic_crisis">
+    <option value="0">Enter systemic_crisis</option>
+    <option value="0">0</option>
+    <option value="1">1</option>
+   </select> 
       <input type="text" name="exch_usd" placeholder="Enter exch_usd" required="required" />
       <input type="text" name="year" placeholder="Enter year" required="required" />
       <input type="text" name="inflation_annual_cpi" placeholder="Enter inflation_annual_cpi" required="required" />
       <input type="text" name="case" placeholder="Enter case" required="required" />
-      <input type="text" name="inflation_crises" placeholder="Enter inflation_crises" required="required" />
-      <input type="text" name="domestic_debt_in_default" placeholder="Enter domestic_debt_in_default" required="required" />
-      <input type="text" name="sovereign_external_debt_default" placeholder="Enter sovereign_external_debt_default" required="required" />
-      <input type="text" name="currency_crises" placeholder="Enter currency_crises" required="required" />
+     
+     <!--  <input type="text" name="inflation_crises" placeholder="Enter inflation_crises" required="required" /> -->
+    <select name="inflation_crises">
+      <option value="0">Enter inflation_crises</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+     </select> 
+     
+      <!-- <input type="text" name="domestic_debt_in_default" placeholder="Enter domestic_debt_in_default" required="required" /> -->
+    <select name="domestic_debt_in_default">
+      <option value="0">Enter domestic_debt_in_default</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+     </select> 
+      
+      <!-- <input type="text" name="sovereign_external_debt_default" placeholder="Enter sovereign_external_debt_default" required="required" /> -->
+    <select name="sovereign_external_debt_default">
+      <option value="0">Enter sovereign_external_debt_default</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+     </select>
+
+      <!-- <input type="text" name="currency_crises" placeholder="Enter currency_crises" required="required" /> -->
+    <select name="currency_crises">
+      <option value="0">Enter currency_crises</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+
+      
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
