@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h3>African Bank Crisis prediction</h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="systemic_crisis" placeholder="Enter systemic_crisis" required="required" />
+      <input type="text" name="exch_usd" placeholder="Enter exch_usd" required="required" />
+      <input type="text" name="year" placeholder="Enter year" required="required" />
+      <input type="text" name="inflation_annual_cpi" placeholder="Enter inflation_annual_cpi" required="required" />
+      <input type="text" name="case" placeholder="Enter case" required="required" />
+      <input type="text" name="inflation_crises" placeholder="Enter inflation_crises" required="required" />
+      <input type="text" name="domestic_debt_in_default" placeholder="Enter domestic_debt_in_default" required="required" />
+      <input type="text" name="sovereign_external_debt_default" placeholder="Enter sovereign_external_debt_default" required="required" />
+      <input type="text" name="currency_crises" placeholder="Enter currency_crises" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
